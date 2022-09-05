@@ -3,6 +3,10 @@
 
 int main(void)
 {
+    printf("string_init1: %s\n", string_init("ABC"));
+    printf("string_init2: %s\n", string_init(NULL));
+    printf("-----------------------------\n");
+
     printf("string_is_empty1: %d\n", string_is_empty("A"));
     printf("string_is_empty2: %d\n", string_is_empty(""));
     printf("string_is_empty3: %d\n", string_is_empty(NULL));
@@ -53,5 +57,15 @@ int main(void)
 
     char str4[] = "jack wu";
     printf("string_ucwords1: %s\n", string_ucwords(str4));
+    printf("-----------------------------\n");
+
+    char str5[] = "\t \t\nhey there";
+    char str6[] = "hey there";
+    char str7[] = "hey there  \t\t\n";
+    char str8[] = "\t\n hey there \n \t\t";
+    printf("string_trim_left1: %s\n", string_trim_left(str5));
+    printf("string_trim_left2: %s\n", string_trim_left(str6));
+    printf("string_trim_right1: %s\n", string_trim_right(str7));
+    printf("string_trim1: %s\n", string_trim(str8));
     printf("-----------------------------\n");
 }
