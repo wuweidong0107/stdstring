@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "stdstring.h"
 
 int main(void)
@@ -55,7 +56,7 @@ int main(void)
     printf("string_to_upper3: %s\n", string_to_upper(str3));
     printf("-----------------------------\n");
 
-    char str4[] = "jack wu";
+    char str4[] = "hello world";
     printf("string_ucwords1: %s\n", string_ucwords(str4));
     printf("-----------------------------\n");
 
@@ -68,4 +69,27 @@ int main(void)
     printf("string_trim_right1: %s\n", string_trim_right(str7));
     printf("string_trim1: %s\n", string_trim(str8));
     printf("-----------------------------\n");
+
+    char str9[] = "Hello@@World@ @Stdring";
+    char *part8[8];
+    char *part2[2];
+    size_t count;
+    int i;
+    count = string_split(str9, "@@", part8, 8);
+    for(i=0; i<count; i++) {
+        printf("%d:%s\n", i, part8[i]);
+        free(part8[i]);
+    }
+    count = string_split(str9, "@@", part2, 2);
+    for(i=0; i<count; i++) {
+        printf("%d:%s\n", i, part2[i]);
+        free(part2[i]);
+    }
+
+    count = string_split(str9, "@", part8, 8);
+    for(i=0; i<count; i++) {
+        printf("%d:%s\n", i, part8[i]);
+        free(part8[i]);
+    }
+
 }

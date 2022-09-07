@@ -25,4 +25,15 @@ bool string_ends_with_case(const char *str, const char *suffix);
 char *string_to_upper(char *s);
 char *string_to_lower(char *s);
 char *string_ucwords(char *s);
+
+char *string_init(const char *src);
+char *string_to_upper(char *s);
+char *string_to_lower(char *s);
+char *string_ucwords(char *s);
+
+char *string_trim_left(char *s);
+char *string_trim_right(char *s);
+char *string_trim(char *s);
+
+int string_split(const char *s, const char *delim, char *parts[], size_t count);
 ```
